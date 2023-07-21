@@ -1,0 +1,1 @@
+{"version":3,"file":"css/screen.css","mappings":";;;AAAA;EACE;AACF;AAAE;EACE;AAEJ,C","sources":["webpack://wordpress-starter-fse/./resources/scss/screen.scss"],"sourcesContent":["body {\n  background-color: red !important;\n  p {\n    color: pink !important;\n  }\n}\n"],"names":[],"sourceRoot":""}
