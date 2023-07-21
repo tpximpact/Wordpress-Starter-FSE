@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#FFF",
+    "titleBar.inactiveForeground": "#c9c9c9",
+    "titleBar.activeBackground": "#2700eb",
+    "titleBar.inactiveBackground": "#2700eb"
+  },
+  "git.ignoreLimitWarning": true,
+  "terminal.integrated.cwd": "${workspaceFolder}/wp-content/themes/wordpress-starter-fse"
+}
