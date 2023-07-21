@@ -1,6 +1,12 @@
+@import '1-base/mixins';
+@import '1-base/variables';
+@import '1-base/layout';
+@import '1-base/typography';
+@import '1-base/animation';
+
 body {
-  background-color: red !important;
+  background-color: $green;
   p {
-    color: pink !important;
+    color: $green; 
   }
 }

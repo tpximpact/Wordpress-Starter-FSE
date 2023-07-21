@@ -1,0 +1,27 @@
+body {
+  position: relative;
+}
+
+@mixin content-width {
+  width: 100%;
+  max-width: var(--wp--style--global--content-size);
+  margin: 0 auto;
+  padding-right: var(--wp--preset--spacing--20) !important;
+  padding-left: var(--wp--preset--spacing--20) !important;
+}
+
+@mixin article-width {
+  width: 100%;
+  max-width: 935px;
+  margin: 0 auto;
+  padding-right: var(--wp--preset--spacing--20) !important;
+  padding-left: var(--wp--preset--spacing--20) !important;
+}
+
+@mixin carousel-width {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-right: var(--wp--preset--spacing--20) !important;
+  padding-left: var(--wp--preset--spacing--20) !important;
+}

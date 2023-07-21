@@ -1,0 +1,31 @@
+{
+  "apiVersion": 2,
+  "name": "acf/hero",
+  "title": "Hero",
+  "description": "A custom block",
+  "style": "file:./hero.scss",
+  "icon": "cover-image",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "/hero.php"
+  },
+  "align": "full",
+  "supports": {
+    "mode": false,
+    "align": false,
+    "anchor": false,
+    "alignContent": false,
+    "color": {
+      "text": false,
+      "background": true,
+      "link": false
+    },
+    "alignText": false,
+    "spacing": false,
+    "typography": {
+      "lineHeight": false,
+      "fontSize": false
+    },
+    "fullHeight": false
+  }
+}

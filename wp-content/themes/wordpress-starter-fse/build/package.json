@@ -1,8 +1,8 @@
 {
   "name": "wordpress-starter-fse",
   "scripts": {
-    "start": "wp-scripts start --webpack-src-dir=resources --output-path=public",
-    "build": "wp-scripts build --webpack-src-dir=resources --output-path=public"
+    "start": "wp-scripts start --webpack-src-dir=resources --output-path=../public",
+    "build": "wp-scripts build --webpack-src-dir=resources --output-path=../public"
   },
   "devDependencies": {
     "@wordpress/scripts": "^26.9.0",

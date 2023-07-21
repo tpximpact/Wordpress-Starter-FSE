@@ -1,0 +1,303 @@
+// @mixin content-width-small {
+//   width: 100%;
+//   max-width: 800px !important;
+//   margin: 0 !important;
+//   padding-right: var(--wp--preset--spacing--20) !important;
+//   padding-left: var(--wp--preset--spacing--20) !important;
+// }
+
+@mixin space-for-navigation {
+  padding-top: calc(135px + var(--wp--preset--spacing--30)) !important;
+  @media (min-width: $break-desktop) {
+    padding-top: calc(165px + var(--wp--preset--spacing--30)) !important;
+  }
+}
+
+@mixin margin-top {
+  margin-top: var(--wp--preset--spacing--30);
+  &--no-margin-top {
+    margin-top: 0;
+  }
+}
+
+@mixin margin-bottom {
+  margin-bottom: var(--wp--preset--spacing--30);
+  &--no-margin-bottom {
+    margin-bottom: 0;
+  }
+}
+
+@mixin margin-top-large {
+  margin-top: var(--wp--preset--spacing--50);
+  &--no-margin-bottom {
+    margin-top: 0;
+  }
+}
+
+@mixin margin-bottom-large {
+  margin-bottom: var(--wp--preset--spacing--50);
+  &--no-margin-bottom {
+    margin-bottom: 0;
+  }
+}
+
+/* stylelint-disable */
+@mixin margin-block-start-0 {
+  margin-block-start: 0 !important;
+}
+/* stylelint-enable */
+
+@function calculateRem($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}
+
+// USAGE: @include font-size(font-size in px, line height in px); line-height optional
+@mixin font-size($size, $line-height: false) {
+  font-size: calculateRem($size);
+  @if $line-height != false {
+    line-height: ($line-height / $size);
+  }
+}
+
+// USAGE: @include wp-admin-offset(top, 0)
+$wp-admin-bar-md: 32px;
+$wp-admin-bar-sm: 48px;
+
+$wp-breakpoint-md: 784px;
+$wp-breakpoint-sm: 600px;
+
+@mixin wp-admin-offset($prop: top, $offset: 0) {
+  // No WP admin bar
+  #{ $prop }: #{$offset};
+
+  // WP admin bar is visible
+  body.admin-bar & {
+    // Medium-sized devices
+    #{ $prop }: if($offset != 0, calc(#{$offset} + #{$wp-admin-bar-sm}), #{$wp-admin-bar-sm});
+
+    // Larger devices
+    @media (min-width: #{ $wp-breakpoint-md }) {
+      #{ $prop }: if($offset != 0, calc(#{$offset} + #{$wp-admin-bar-md}), #{$wp-admin-bar-md});
+    }
+
+    // Mobile-ish sizes, the admin bar isn't sticky anymore
+    @media (max-width: #{ $wp-breakpoint-sm }) {
+      #{ $prop }: #{$offset};
+    }
+  }
+}
+
+@mixin background-color {
+  &--light-green {
+    background-color: $light-green;
+  }
+  &--green,
+  &--netzero,
+  &--keynote,
+  &--active {
+    background-color: $green;
+  }
+  &--dark-green {
+    background-color: $dark-green;
+  }
+  &--grey {
+    background-color: $grey;
+  }
+  &--light-grey {
+    background-color: $light-grey;
+  }
+  &--sky-blue,
+  &--roundtables {
+    background-color: $sky-blue;
+  }
+  &--lime,
+  &--bec {
+    background-color: $lime;
+  }
+  &--blue,
+  &--innovation {
+    background-color: $blue;
+  }
+  &--rust,
+  &--finance {
+    background-color: $rust;
+  }
+  &--gold,
+  &--people {
+    background-color: $gold;
+  }
+  &--purple,
+  &--buildings {
+    background-color: $purple;
+  }
+  &--pink,
+  &--change {
+    background-color: $pink;
+  }
+}
+
+@mixin border-color {
+  &--light-green {
+    border-color: $light-green;
+  }
+  &--green,
+  &--netzero,
+  &--keynote {
+    border-color: $green;
+  }
+  &--dark-green {
+    border-color: $dark-green;
+  }
+  &--grey {
+    border-color: $grey;
+  }
+  &--light-grey {
+    border-color: $light-grey;
+  }
+  &--sky-blue,
+  &--roundtables {
+    border-color: $sky-blue;
+  }
+  &--lime,
+  &--bec {
+    border-color: $lime;
+  }
+  &--blue,
+  &--innovation {
+    border-color: $blue;
+  }
+  &--rust,
+  &--finance {
+    border-color: $rust;
+  }
+  &--gold,
+  &--people {
+    border-color: $gold;
+  }
+  &--purple,
+  &--buildings {
+    border-color: $purple;
+  }
+  &--pink,
+  &--change {
+    border-color: $pink;
+  }
+}
+
+@mixin colour-pick-text {
+  color: $black;
+  a {
+    color: $black;
+  }
+  &--active,
+  &--green,
+  &--netzero,
+  &--keynote,
+  &--blue,
+  &--innovation,
+  &--purple,
+  &--buildings,
+  &--pink,
+  &--change,
+  &--rust,
+  &--finance {
+    color: $white;
+    a {
+      color: $white;
+    }
+  }
+}
+
+@mixin link-block {
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  background-color: $green;
+  color: $white;
+  font-weight: bold;
+  transition: 0.4s;
+  &:hover {
+    background-color: $grey;
+    color: $black;
+  }
+}
+
+@mixin button {
+  display: inline-block;
+
+  a {
+    display: inline-block;
+    padding: calc(0.667em + 2px) calc(1.333em + 2px);
+    background-color: $green;
+    border-width: 0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: inherit;
+    @include font-size(14, 14);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.4s;
+    cursor: pointer;
+    word-break: break-word;
+    @media (min-width: $break-desktop) {
+      @include font-size(20, 20);
+    }
+    &:hover {
+      background-color: $light-green;
+      color: $white;
+    }
+  }
+}
+
+@mixin button-white {
+  @include button;
+  a {
+    background-color: $white;
+    color: $green;
+  }
+}
+
+@mixin button-for-button {
+  display: inline-block;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  background-color: $green;
+  border-width: 0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: inherit;
+  @include font-size(14, 14);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.4s;
+  cursor: pointer;
+  word-break: break-word;
+  @media (min-width: $break-desktop) {
+    @include font-size(15, 15);
+  }
+  &:hover {
+    background-color: $light-green;
+    color: $white;
+  }
+}
+
+@mixin hover {
+  transition: transform 0.4s, box-shadow 0.4s;
+  &:hover {
+    box-shadow: 8px 11px 14px 0px rgba(204, 204, 204, 0.75);
+    transform: scale(1.01);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+}
+
+@mixin hover-small {
+  @include hover;
+
+  &:hover {
+    box-shadow: 8px 11px 10px 0px rgba(204, 204, 204, 0.75);
+    transform: scale(1.001);
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "####",
+  "title": "####",
+  "description": "A custom Rethink block",
+  "category": "rethink-blocks",
+  "icon": "admin-comments",
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "/####.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true,
+    "color": {
+      "text": false,
+      "background": true,
+      "link": false
+    },
+    "spacing": {
+      "padding": [
+        "top",
+        "bottom"
+      ],
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  }
+}
